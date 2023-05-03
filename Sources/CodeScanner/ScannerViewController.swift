@@ -63,6 +63,10 @@ extension CodeScannerView {
                 var qrCodeLink = ""
 
                 let features = detector.features(in: ciImage)
+                
+                if features.isEmpty {
+                    didFail(reason: .badOutput)
+                }
 
                 for feature in features as! [CIQRCodeFeature] {
                     qrCodeLink = feature.messageString!
