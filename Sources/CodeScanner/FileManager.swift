@@ -18,7 +18,6 @@ extension FileManager {
             for file in directoryContents {
                 do {
                     try fileManager.removeItem(at: file)
-                    print("Deleted file \(file.absoluteString)")
                 } catch {
                     print("Error while deleting file. \(error.localizedDescription)")
                 }
