@@ -84,6 +84,7 @@ extension CodeScannerView {
             }
 
             dismiss(animated: true, completion: nil)
+            FileManager.clearTmpDir()
         }
         
         public func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
